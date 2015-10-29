@@ -22,7 +22,7 @@ var consolere = require('console-remote-client').connect('console.re','80','2c09
 /////// SET ROUTE //////////////////
 ////////////////////////////////////
 moment.locale('it');
-//moment.tz.setDefault("Europe/Rome");
+moment.tz.setDefault("Europe/Rome");
 
 var app = express();
 app.use(bodyParser.json()); // for parsing application/json
