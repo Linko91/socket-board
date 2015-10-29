@@ -29,7 +29,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 //console.re.log('remote log init. BOT VERSION: '+pjson.version, process, process.env);
-console.re.log('remote log init. BOT VERSION: '+pjson.version);
+console.re.log('remote log init. BOT VERSION: '+pjson.version, process.env);
+//console.re.log('remote log init. BOT VERSION: '+pjson.version);
 
 app.set('port', (process.env.PORT || 5000));
 app.use('/vendor', express.static(__dirname + '/bower_components'));
