@@ -34,8 +34,8 @@ console.re.log('remote log init. BOT VERSION: '+pjson.version);
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req, res) {
-  res.send('pages/index');
-  //res.sendFile(path.join(__dirname + '/index.html'));
+  //res.send('pages/index');
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.listen(app.get('port'), function() {
