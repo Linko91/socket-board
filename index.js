@@ -59,6 +59,6 @@ io.on('connection', function(socket){
         socket.broadcast.emit('broad', data);
     });
 });
-io.listen(3000);
+io.listen(app.get('port'));
 
 
