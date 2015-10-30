@@ -2,4 +2,4 @@
 
 Simple socket example
 
-Node -> Express.js + Socket.io
+Node.js -> Express.js + Socket.io
