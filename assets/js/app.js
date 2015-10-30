@@ -7,8 +7,10 @@ app.config(function($mdThemingProvider) {
 app.controller('appCtrl', function($scope){
 	$scope.$watch("inputval", function(newValue, oldValue) {
 		console.log(arguments);
-		if (newValue != oldValue)
+		if (newValue != oldValue){
 		    window.socket.emit('new val', newValue);
+		    $("md-input-container > textarea").trigger('input');
+		}
 	});
 });
 
