@@ -1,0 +1,7 @@
+md-input-container textarea {
+	box-sizing: border-box;
+	max-height: 300px; /* optional, but recommended */
+	min-height: 29px;
+	overflow-x: hidden; /* for Firefox (issue #5) */
+	height: 29px;
+}

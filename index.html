@@ -1,37 +1,33 @@
 <html lang="it" ng-app="app">
-  <head>
-    <link rel="stylesheet" href="vendor/angular-material/angular-material.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
-    <meta name="viewport" content="initial-scale=1" />
-  </head>
-  <body layout="column" ng-controller="appCtrl">
-    <md-toolbar layout="row">
-      <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
-          <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
-        </md-button>
-        <h1>Hello World</h1>
-      </div>
-    </md-toolbar>
-    <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-          
-        </md-sidenav>
-        <div layout="column" flex id="content">
-            <md-content layout="column" flex class="md-padding">
-            
-            </md-content>
-        </div>
-    </div>
-    <!-- Angular Material Dependencies -->
-    <script src="vendor/jquery/dist/jquery.min.js"></script>
-    <script src="vendor/angular/angular.min.js"></script>
-    <script src="vendor/angular-animate/angular-animate.min.js"></script>
-    <script src="vendor/angular-aria/angular-aria.min.js"></script>
+<head>
+	<link rel="stylesheet" href="vendor/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
 
-    <script src="vendor/angular-material/angular-material.min.js"></script>
+	<link rel="stylesheet" href="assets/css/app.css">
+	<meta name="viewport" content="initial-scale=1" />
+</head>
+<body layout="row" layout-align="center center" ng-controller="appCtrl">
+
+	<md-card flex="65">
+		<md-card-content>
+			<md-input-container flex ng-cloak>
+		        <label>Text</label>
+		        <textarea ng-model="inputval" columns="1" md-no-autogrow ng-model-options="{debounce: 500}"></textarea>
+		    </md-input-container>
+		</md-card-content>
+	</md-card>
 
 
-    <script src="assets/js/main.js"></script>
-  </body>
+	<!-- Angular Material Dependencies -->
+	<script src="vendor/jquery/dist/jquery.min.js"></script>
+	<script src="vendor/angular/angular.min.js"></script>
+	<script src="vendor/angular-animate/angular-animate.min.js"></script>
+	<script src="vendor/angular-aria/angular-aria.min.js"></script>
+	<script src="vendor/angular-material/angular-material.min.js"></script>
+	<script src="vendor/textarea-autosize/dist/jquery.textarea_autosize.min.js"></script>
+
+	<script src="/socket.io/socket.io.js"></script>  
+
+	<script src="assets/js/app.js"></script>
+</body>
 </html>
