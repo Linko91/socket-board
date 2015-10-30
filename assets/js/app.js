@@ -9,7 +9,7 @@ app.controller('appCtrl', function($scope){
 		console.log(arguments);
 		if (newValue != oldValue){
 		    window.socket.emit('new val', newValue);
-		    $("md-input-container > textarea").trigger('input');
+		    //$("md-input-container > textarea").trigger('input');
 		}
 	});
 });
@@ -38,7 +38,7 @@ $(document).ready(function() {
 		var $scope = angular.element(appElement).scope();
 		$scope.$apply(function() {
 			$scope.inputval = data;
-			$("md-input-container > textarea").trigger('input');
+			setTimeout(function(){$("md-input-container > textarea").trigger('input');}, 1000);
 		});
 	});
 });
