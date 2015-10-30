@@ -21,7 +21,7 @@ app.controller('appCtrl', function($scope){
 
 $(document).ready(function() {
     $("md-input-container > textarea").textareaAutoSize();
-	
+	/*
 	window.socket = io('http://socket-board.herokuapp.com:3000');
 	socket.on('connect', function(data){
 		socket.emit('join', 'Hello World from client');
@@ -37,6 +37,6 @@ $(document).ready(function() {
 			$scope.inputval = data;
 			$("md-input-container > textarea").trigger('input');
 		});
-	});
+	});*/
 });
 
