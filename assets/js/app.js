@@ -22,7 +22,8 @@ app.controller('appCtrl', function($scope){
 $(document).ready(function() {
     $("md-input-container > textarea").textareaAutoSize();
 	
-	window.socket = io('http://localhost:3000');
+	//window.socket = io('http://localhost:3000');
+	window.socket = io();
 	socket.on('connect', function(data){
 		socket.emit('join', 'Hello World from client');
 		console.log(data);

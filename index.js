@@ -12,7 +12,10 @@ _.mixin(ustr.exports());
 var path = require('path');
 var pjson = require('./package.json');
 var consolere = require('console-remote-client').connect('console.re','80','2c09-8025-fd9a');
-var io = require('socket.io')();
+
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
 
 
@@ -24,13 +27,17 @@ var io = require('socket.io')();
 moment.locale('it');
 moment.tz.setDefault("Europe/Rome");
 
-var app = express();
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 console.re.log('remote log init. BOT VERSION: '+pjson.version, process.env);
 
-app.set('port', (process.env.PORT || 5000));
+var port = process.env.PORT || 3000;
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
+});
+
+
 app.use('/vendor', express.static(__dirname + '/bower_components'));
 app.use('/socket.io', express.static(__dirname + '/node_modules/socket.io-client'));
 app.use('/assets', express.static(__dirname + '/assets'));
@@ -39,12 +46,6 @@ app.get('/', function(req, res) {
   //res.send('pages/index');
   res.sendFile(path.join(__dirname + '/index.html'));
 });
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
-
-
 
 
 
@@ -59,6 +60,6 @@ io.on('connection', function(socket){
         socket.broadcast.emit('broad', data);
     });
 });
-io.listen(3000);
+
 
 

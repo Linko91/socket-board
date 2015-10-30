@@ -1,6 +1,6 @@
 {
   "name": "socket-board",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
