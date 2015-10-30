@@ -1,0 +1,33 @@
+{
+  "name": "socket-board",
+  "description": "Simple socket example",
+  "main": "assets/js/app.js",
+  "authors": [
+    "Davide Di Modica <webmaster.ddm@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "socket.io"
+  ],
+  "homepage": "https://github.com/Linko91/socket-board",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.11.4",
+    "textarea-autosize": "~0.4.1",
+    "socket.io": "~1.3.7",
+    "jquery": "~2.1.4"
+  }
+}
